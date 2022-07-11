@@ -1,0 +1,85 @@
+@use './variables'as *;
+@use './typography';
+
+body {
+    display: grid;
+    place-items: center;
+    background-color: $primary-cream;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+
+    .product-view {
+        width: 80%;
+        border-radius: 3.75%;
+        background-color: $neutral-white;
+        overflow: hidden;
+
+        .product-image {
+
+            img {
+                width: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+
+        .container {
+            padding: 1em;
+
+            .product-type {
+                font-size: .625rem;
+                text-transform: uppercase;
+                letter-spacing: .125rem;
+                color: $neutral-dark-grayish-blue;
+                margin-block-end: .5rem;
+            }
+
+            .product-name {
+                font-family: 'Fraunces-Wonky-Bold', serif;
+                font-weight: 700;
+                font-size: 1.75rem;
+                max-width: 15ch;
+                color: $neutral-very-dark-blue;
+            }
+
+            .product-description {
+                color: $neutral-dark-grayish-blue;
+                font-size: .75rem;
+                max-width: 45ch;
+            }
+
+            .product-price {
+                display: inline-flex;
+                align-items: center;
+
+                .new-price {
+                    font-family: 'Fraunces-Wonky-Bold', serif;
+                    font-size: 1.75rem;
+                    text-decoration: none;
+                    color: $primary-dark-cyan;
+                    margin-right: .75em;
+                }
+
+                .old-price {
+                    font-size: .75rem;
+                }
+            }
+        }
+
+        .call-to-action {
+            display: inline-flex;
+            justify-content: center;
+            padding: 1em;
+            border-radius: .5em;
+            width: 100%;
+            background-color: $primary-dark-cyan;
+            text-decoration: none;
+            color: $neutral-white;
+
+            .icon-cart {
+                margin-right: 10px;
+            }
+        }
+    }
+}
