@@ -8,13 +8,25 @@ body {
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    line-height: 1.5em;
 
     .product-view {
+        display: flex;
+        flex-direction: column;
         width: 80%;
-        border-radius: 3.75%;
+        border-radius: .75rem;
         background-color: $neutral-white;
         overflow: hidden;
 
+        @media only screen and (min-width: 767px) {
+            flex-direction: row;
+        }
+
+        & > * {
+            @media only screen and (min-width: 767px) {
+                flex: 1 0 50%;
+            }
+        }
         .product-image {
 
             img {
@@ -26,6 +38,9 @@ body {
 
         .container {
             padding: 1em;
+            @media only screen and (min-width: 767px) {
+                padding: 2.125em;
+            }
 
             .product-type {
                 font-size: .625rem;
@@ -33,25 +48,51 @@ body {
                 letter-spacing: .125rem;
                 color: $neutral-dark-grayish-blue;
                 margin-block-end: .5rem;
+
+                @media only screen and (min-width: 480px) {
+                    font-size: .75rem;
+                }
+
+                @media only screen and (min-width: 767px) {
+                    margin-block-end: 1rem;
+                }
             }
 
             .product-name {
+                margin-block-end: .75rem;
                 font-family: 'Fraunces-Wonky-Bold', serif;
                 font-weight: 700;
                 font-size: 1.75rem;
-                max-width: 15ch;
+                line-height: 1em;
                 color: $neutral-very-dark-blue;
+
+                @media only screen and (min-width: 480px) {
+                    font-size: 1.975rem;
+                }
+
+                @media only screen and (min-width: 767px) {
+                    margin-block-end: 1.5rem;
+                }
             }
 
             .product-description {
+                margin-block-end: 2.5rem;
                 color: $neutral-dark-grayish-blue;
                 font-size: .75rem;
-                max-width: 45ch;
+
+                @media only screen and (min-width: 480px) {
+                    font-size: .975rem;
+                }
             }
 
             .product-price {
                 display: inline-flex;
                 align-items: center;
+                margin-block-end: 1.25rem;
+
+                @media only screen and (min-width: 767px) {
+                    margin-block-end: 1.975rem;
+                }
 
                 .new-price {
                     font-family: 'Fraunces-Wonky-Bold', serif;
@@ -59,10 +100,18 @@ body {
                     text-decoration: none;
                     color: $primary-dark-cyan;
                     margin-right: .75em;
+
+                    @media only screen and (min-width: 480px) {
+                        font-size: 1.975rem;
+                    }
                 }
 
                 .old-price {
                     font-size: .75rem;
+
+                    @media only screen and (min-width: 480px) {
+                        font-size: .975rem;
+                    }
                 }
             }
         }
@@ -70,15 +119,21 @@ body {
         .call-to-action {
             display: inline-flex;
             justify-content: center;
+            gap: 12.5px;
             padding: 1em;
-            border-radius: .5em;
+            border-radius: .625em;
             width: 100%;
             background-color: $primary-dark-cyan;
             text-decoration: none;
             color: $neutral-white;
+            font-weight: 600;
 
             .icon-cart {
-                margin-right: 10px;
+                width: auto;
+            }
+
+            span {
+                font-size: 1rem;
             }
         }
     }
