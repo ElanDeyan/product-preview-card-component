@@ -13,13 +13,17 @@ body {
     .product-view {
         display: flex;
         flex-direction: column;
-        width: 80%;
+        max-width: 80vmin;
+        max-height: 80vmax;
         border-radius: .75rem;
         background-color: $neutral-white;
         overflow: hidden;
 
         @media only screen and (min-width: 767px) {
             flex-direction: row;
+            width: 60vmax;
+            height: 55vmin;
+            max-width: 630px;
         }
 
         & > * {
@@ -30,7 +34,8 @@ body {
         .product-image {
 
             img {
-                width: 100%;
+                max-width: 100%;
+                height: auto;
                 object-fit: contain;
                 object-position: center;
             }
@@ -38,26 +43,28 @@ body {
 
         .container {
             padding: 1em;
+            
             @media only screen and (min-width: 767px) {
-                padding: 2.125em;
+                padding: 1.5em 1.625em;
             }
 
             .product-type {
                 font-size: .625rem;
                 text-transform: uppercase;
-                letter-spacing: .125rem;
+                letter-spacing: .25rem;
                 color: $neutral-dark-grayish-blue;
                 margin-block-end: .5rem;
 
                 @media only screen and (min-width: 480px) {
                     font-size: .75rem;
                 }
-
+                
                 @media only screen and (min-width: 767px) {
-                    margin-block-end: 1rem;
+                    margin-block-end: .75rem;
+                    font-size: .625rem;
                 }
             }
-
+            
             .product-name {
                 margin-block-end: .75rem;
                 font-family: 'Fraunces-Wonky-Bold', serif;
@@ -65,13 +72,14 @@ body {
                 font-size: 1.75rem;
                 line-height: 1em;
                 color: $neutral-very-dark-blue;
-
+                
                 @media only screen and (min-width: 480px) {
                     font-size: 1.975rem;
                 }
-
+                
                 @media only screen and (min-width: 767px) {
-                    margin-block-end: 1.5rem;
+                    margin-block-end: 1.25rem;
+                    font-size: 1.5rem;
                 }
             }
 
@@ -79,9 +87,15 @@ body {
                 margin-block-end: 2.5rem;
                 color: $neutral-dark-grayish-blue;
                 font-size: .75rem;
-
+                
                 @media only screen and (min-width: 480px) {
                     font-size: .975rem;
+                }
+
+                @media only screen and (min-width: 767px) {
+                    font-size: .675rem;
+                    line-height: 1.5em;
+                    margin-block-end: 1.75rem;
                 }
             }
 
@@ -91,7 +105,7 @@ body {
                 margin-block-end: 1.25rem;
 
                 @media only screen and (min-width: 767px) {
-                    margin-block-end: 1.975rem;
+                    margin-block-end: 1.5rem;
                 }
 
                 .new-price {
@@ -104,13 +118,22 @@ body {
                     @media only screen and (min-width: 480px) {
                         font-size: 1.975rem;
                     }
+
+                    @media only screen and (min-width: 767px) {
+                        font-size: 1.75rem;
+                    }
                 }
 
                 .old-price {
+                    color: $neutral-dark-grayish-blue;
                     font-size: .75rem;
 
                     @media only screen and (min-width: 480px) {
                         font-size: .975rem;
+                    }
+
+                    @media only screen and (min-width: 767px) {
+                        font-size: .75rem;
                     }
                 }
             }
@@ -119,6 +142,7 @@ body {
         .call-to-action {
             display: inline-flex;
             justify-content: center;
+            align-items: center;
             gap: 12.5px;
             padding: 1em;
             border-radius: .625em;
@@ -128,12 +152,17 @@ body {
             color: $neutral-white;
             font-weight: 600;
 
-            .icon-cart {
-                width: auto;
-            }
-
             span {
                 font-size: 1rem;
+
+                @media only screen and (min-width: 767px) {
+                    font-size: .75rem;
+                    word-spacing: 2px;
+                }
+            }
+
+            @media only screen and (min-width: 767px) {
+                padding: .625em;
             }
         }
     }
